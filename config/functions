@@ -1,0 +1,15 @@
+# Place file name in header when catting multiple files
+function mcat()
+{
+  more "$@" | cat
+}
+
+# Clear screen, cygwin seems to not have clear command
+function clr()
+{
+    if [ command -v clear 2>/dev/null ]; then
+        clear
+    else
+        printf "\033c"
+    fi
+}

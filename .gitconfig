@@ -1,0 +1,42 @@
+[core]
+    editor = nano
+[color]
+    ui = true
+[alias]
+    a = add
+    s = status
+    co = checkout
+    ci = commit
+    cia = commit --amend
+    cian = commit --amend --no-edit
+    rb = rebase
+    b = branch
+    pl = pull
+    ps = push
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all -20
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -20
+    la = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+    wip = "add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
+    unwip = git log -n 1 | grep -q -c wip && git reset HEAD~1
+    cs = commit -s
+    d = diff --ignore-all-space
+    dc = diff --cached
+    # diff between a revision
+    dfc = !sh -c 'git diff $1~1 $1' -
+    anw = !sh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
+    yoyo = push origin HEAD:refs/for/master
+    cp = cherry-pick
+    zipbranch = !sh -c 'git archive --format zip --output $1.zip $1' -
+    rbm = rebase master
+    rbc = rebase --continue
+    mt = mergetool
+    #brheads = !sh  -c 'git branch | sed "s/^\*/ /" | git log --pretty=format:"%h%x09%an%x09%ad%x09%s"' -
+    news = log -p HEAD@{1}..HEAD@{0}
+[merge]
+    conflictstyle = diff3
+    tool = p4merge
+    prompt = false
+[mergetool "p4merge"]
+    cmd = p4merge.exe \\\"$BASE\\\" \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$MERGED\\\"
+[diff]
+    tool = vimdiff
