@@ -12,8 +12,8 @@ unset HISTFILESIZE
 HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S  "
 # Don't remember trivial 1- and 2-letter commands.
 # & suppress duplicate items
-# [ \t]* supress any command starting with a space
-HISTIGNORE="?:??:&:[ \t]*"
+# [ ]* supress any command starting with a space
+HISTIGNORE="?:??:&:[ ]*"
 # What it says.
 HISTCONTROL=ignoredups
 # Save each history entry immediately (protects against terminal crashes/

@@ -1,7 +1,7 @@
 # Place file name in header when catting multiple files
 function mcat()
 {
-  more "$@" | cat
+    more "$@" | cat
 }
 
 # Clear screen, cygwin seems to not have clear command
@@ -12,4 +12,8 @@ function clr()
     else
         printf "\033c"
     fi
+}
+
+function ff() {
+    find . -type f -name "$@" ;
 }
