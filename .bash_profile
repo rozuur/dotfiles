@@ -2,12 +2,17 @@
 
 # source the users bashrc if it exists
 if [ -f "${HOME}/.bashrc" ] ; then
-  source "${HOME}/.bashrc"
+    source "${HOME}/.bashrc"
 fi
 
 # Set PATH so it includes user's private bin if it exists
 if [ -d "${HOME}/bin" ] ; then
-  PATH="${HOME}/bin:${PATH}"
+    PATH=".:${HOME}/bin:${PATH}"
+fi
+
+# Place user sensitive stuff here
+if [ -f "${HOME}/.localrc" ] ; then
+    source "${HOME}/.localrc"
 fi
 
 # Set MANPATH so it includes users' private man if it exists

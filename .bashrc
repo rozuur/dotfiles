@@ -5,7 +5,7 @@ shopt -s cdspell # Autocorrect typos in path names when using `cd`
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux` # no need to type cd .. ; .. => cd ..
 # * Recursive globbing, e.g. `echo **/*.txt`
 for option in autocd globstar; do
-	shopt -s "$option" 2> /dev/null
+    shopt -s "$option" 2> /dev/null
 done
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
@@ -26,11 +26,11 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 # All the settings reside inside config/ folder, so source all those files.
 for file in config/*
 do
-  source $file
+    source $file
 done
 
 # Place sensitive data inside ~/.bashrc.<user_name> or to override
 [ -f ~/.bashrc.${USER} ] && source ~/.bashrc.${USER}
 
 # Display a random command description
-echo "Did you know that:"; whatis $(basename $(ls /bin/*.exe | shuf | head -1) | cut -d. -f 1)
+#echo "Did you know that:"; whatis $(basename $(ls /bin/*.exe | shuf | head -1) | cut -d. -f 1)
