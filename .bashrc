@@ -23,7 +23,7 @@ export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
-# All the settings reside inside config/ folder, so source all those files.
+# All the settings reside inside ~/config/ folder, so source all those files.
 for file in config/*
 do
     source $file

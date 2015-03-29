@@ -1,5 +1,6 @@
 [core]
     editor = nano
+	excludesfile = ~/.gitignore
 [color]
     ui = true
 [alias]
@@ -14,13 +15,14 @@
     ps = push
     pso = push -u origin master
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all -20
-    ls = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -20
+    ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -20
     la = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
     wip = "add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
     unwip = git log -n 1 | grep -q -c wip && git reset HEAD~1
     cs = commit -s
     d = diff --ignore-all-space --diff-filter=MRC
     dc = diff --cached --ignore-all-space
+    dw = diff --ignore-all-space --diff-filter=MRC --word-diff=color
     # diff between a revision
     dfc = !sh -c 'git diff $1~1 $1' -
     anw = !sh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
@@ -33,17 +35,23 @@
     rbc = rebase --continue
     mt = mergetool
     #brheads = !sh  -c 'git branch | sed "s/^\*/ /" | git log --pretty=format:"%h%x09%an%x09%ad%x09%s"' -
-    news = log -p HEAD@{1}..HEAD@{0}
+    news = log -p --diff-filter=M HEAD@{1}..HEAD@{0}
   	up = "!git remote update -p; git merge --ff-only @{u}"
 [merge]
     conflictstyle = diff3
-    tool = p4merge
+	tool = p4merge
     prompt = false
-[mergetool "p4merge"]
-    cmd = p4merge.exe \\\"$BASE\\\" \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$MERGED\\\"
 [diff]
     tool = vimdiff
 [mergetool]
 	prompt = false
 [help]
 	autocorrect = 5
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.3/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[status]
+	relativePaths = true
