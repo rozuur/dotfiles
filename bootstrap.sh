@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# Create .nanorc file if nano is present
-command -v nano >/dev/null 2>&1 && {
-for file in /usr/share/nano/*
-do
-    printf 'include "%s"\n' "$file"
-  done
-} > .nanorc
 
 cd "$(dirname "${BASH_SOURCE}")"
 git pull origin master

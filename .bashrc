@@ -24,7 +24,7 @@ export CLICOLOR=1
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
 # All the settings reside inside ~/config/ folder, so source all those files.
-for file in config/*
+for file in ~/config/*
 do
     source $file
 done
