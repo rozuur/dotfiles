@@ -19,6 +19,7 @@ alias less='less -r'                          # raw control characters
 alias whence='type -a'                        # where, of a sort
 
 alias g='git'
+alias grep='grep --color=auto'
 
 # Modify using http://astyle.sourceforge.net/astyle.html
 ASTYLE_PARAMETERS="--style=stroustrup \

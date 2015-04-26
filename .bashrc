@@ -17,11 +17,12 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete 
 # change this to vim or emacs, if you don't want to use nano
 export EDITOR="nano"
 
-# For colors
-export GREP_OPTIONS='--color=auto'
 # http://unix.stackexchange.com/questions/2897/clicolor-and-ls-colors-in-bash
 export CLICOLOR=1
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
+# Add brew path for coreutils
+[ -d "`brew --prefix`/opt/coreutils/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/coreutils/libexec/gnubin:$PATH"
 
 # All the settings reside inside ~/config/ folder, so source all those files.
 for file in ~/config/*
