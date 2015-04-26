@@ -15,5 +15,12 @@ function clr()
 }
 
 function ff() {
-    find . -type f -name "$@" ;
+    find . -type f -iname "$@*" ;
+}
+function ffe() {
+    find . -type f -iname "*$@" ;
+}
+
+function ip() {
+  curl icanhazip.com;
 }

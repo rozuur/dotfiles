@@ -12,11 +12,11 @@ unset HISTFILESIZE
 HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S  "
 # Don't remember trivial 1- and 2-letter commands.
 # & suppress duplicate items
-# [ ]* supress any command starting with a space
+# [ \t]* supress any command starting with a space
 HISTIGNORE="?:??:&:[ ]*"
 # What it says.
 HISTCONTROL=ignoredups
 # Save each history entry immediately (protects against terminal crashes/
 # disconnections, and interleaves commands from multiple terminals in correct
-# chronological order).
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+# chronological order). Also reload history
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"

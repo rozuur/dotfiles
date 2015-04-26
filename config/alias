@@ -15,7 +15,7 @@ alias la='ls -hAF ${colorflag}'                # All files except . and ..
 alias ll='ls -lhAF ${colorflag}'               # All files except . and ..
 
 alias less='less -r'                          # raw control characters
-
+#alias vim='nvim'
 alias whence='type -a'                        # where, of a sort
 
 alias g='git'

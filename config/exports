@@ -1,0 +1,9 @@
+if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]
+then
+  export WORKON_HOME=~/.venvs
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+  . $(brew --prefix)/share/bash-completion/bash_completion
+fi
