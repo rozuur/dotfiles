@@ -29,6 +29,8 @@ do
     source $file
 done
 
+[ -f "`brew --prefix`/etc/grc.bashrc" ] && source "`brew --prefix`/etc/grc.bashrc"
+
 # Place sensitive data inside ~/.bashrc.<user_name> or to override
 [ -f ~/.bashrc.${USER} ] && source ~/.bashrc.${USER}
 
