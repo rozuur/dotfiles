@@ -60,7 +60,8 @@ brew install curl --with-default-names
 brew install rsync 
 brew install svn
 brew install unzip
-brew install eess
+brew install less
+brew install nano
 
 brew install grc
 
