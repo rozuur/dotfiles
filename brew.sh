@@ -1,3 +1,6 @@
+
+echo "Run xcode-select --install"
+
 # Check for Homebrew,
 # Install if we don't have it
 if test ! $(which brew); then
@@ -64,6 +67,7 @@ brew install less
 brew install nano
 
 brew install grc
+brew install commonmark
 
 # Cask files
 brew cask install $(cat Caskfile|grep -v "#")
