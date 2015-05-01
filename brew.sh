@@ -59,6 +59,8 @@ brew install gnu-which --with-default-names
 brew install gnutls --with-default-names
 brew install gawk --with-default-names
 brew install curl --with-default-names
+brew install emacs --with-cocoa
+brew linkapps emacs
 
 brew install rsync 
 brew install svn
