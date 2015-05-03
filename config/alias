@@ -45,9 +45,3 @@ alias ipaddr="curl http://icanhazip.com/"      # ip address
 # URL-encode and decode strings
 alias urlencode='python -c "import sys, urllib2 as ul; print ul.quote(sys.argv[1]);"'
 alias urldecode='python -c "import sys, urllib2 as ul; print ul.unquote(sys.argv[1]);"'
-
-# generate etags file for c and c++
-alias taggen='find $@ -type f -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -o -name "*.cc"| xargs etags -a'
-
-# Misc Alias
-alias fact='lynx -reload -dump randomfunfacts.com|grep -A3 "Useless tidbits" | tail -2'
