@@ -15,3 +15,17 @@ function dot_file() {
 for file in dot.*; do
     dot_file ${file}
 done
+
+# Os specific stuff
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unamestr" == 'FreeBSD' ]]; then
+   platform='freebsd'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   platform='osx'
+fi
+
+# Execute Os specific bootstrap
+bash ./bootstrap_${platform}.sh

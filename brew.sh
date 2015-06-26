@@ -1,5 +1,4 @@
-
-echo "Run xcode-select --install"
+xcode-select --install || echo "Xcode already installed"
 
 # Check for Homebrew,
 # Install if we don't have it
@@ -62,7 +61,7 @@ brew install curl --with-default-names
 brew install emacs --with-cocoa
 brew linkapps emacs
 
-brew install rsync 
+brew install rsync
 brew install svn
 brew install unzip
 brew install less
@@ -80,4 +79,3 @@ brew install homebrew/completions/fabric-completion
 
 # Cask files
 brew cask install $(cat Caskfile|grep -v "#")
-
