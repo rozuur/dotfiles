@@ -18,7 +18,6 @@ alias less='less -r'                          # raw control characters
 #alias vim='nvim'
 alias whence='type -a'                        # where, of a sort
 
-alias g='git'
 alias grep='grep --color=auto'
 
 # Modify using http://astyle.sourceforge.net/astyle.html
