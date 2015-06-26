@@ -22,7 +22,7 @@ brew tap caskroom/versions
 
 brew install coreutils
 brew install findutils
-brew install moreutils
+brew reinstall moreutils
 brew install binutils
 brew install diffutils
 
@@ -40,7 +40,7 @@ brew install lynx
 brew install wget --with-iri
 
 brew install s3cmd
-brew install protobuf
+brew install protobuf241
 brew install lzop
 brew install libevent
 brew install play22
@@ -70,6 +70,13 @@ brew install nano
 
 brew install grc
 brew install commonmark
+brew install fpp
+brew install youtube-dl
+brew install whellcheck
+brew install pgcli
+brew install httpie
+
+brew install homebrew/completions/fabric-completion
 
 # Cask files
 brew cask install $(cat Caskfile|grep -v "#")

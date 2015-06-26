@@ -1,5 +1,7 @@
 # User dependent .bash_profile file
 
+echo "First"
+
 # source the users bashrc if it exists
 if [ -f "${HOME}/.bashrc" ] ; then
     source "${HOME}/.bashrc"

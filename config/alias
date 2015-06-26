@@ -46,3 +46,4 @@ alias ipaddr="curl http://icanhazip.com/"      # ip address
 alias urlencode='python -c "import sys, urllib2 as ul; print ul.quote(sys.argv[1]);"'
 alias urldecode='python -c "import sys, urllib2 as ul; print ul.unquote(sys.argv[1]);"'
 alias stamp='date "+%Y-%m-%d-%H:%M:%S"'
+alias brwe=brew

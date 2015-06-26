@@ -8,7 +8,14 @@ if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
     . $(brew --prefix)/share/bash-completion/bash_completion
 fi
 
-if [[ -d /usr/local/src/rust/src ]]
+if [[ -d ${HOME}/source/rust ]]
 then
-    export RUST_SRC_PATH=/usr/local/src/rust/src
+    export RUST_SRC_PATH=${HOME}/source/rust/src
 fi
+
+if which jenv > /dev/null; then
+    eval "$(jenv init -)"; 
+    export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`";
+fi
+
+complete -C aws_completer aws
