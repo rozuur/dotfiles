@@ -5,7 +5,7 @@ function mcat()
 }
 
 # Clear screen, cygwin seems to not have clear command
-function clr()
+function clear()
 {
     if [ command -v clear 2>/dev/null ]; then
         clear

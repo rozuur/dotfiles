@@ -1,3 +1,13 @@
+# http://unix.stackexchange.com/questions/2897/clicolor-and-ls-colors-in-bash
+export CLICOLOR=1
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
+# change this to vim or emacs, if you don't want to use nano
+export EDITOR="nano"
+
+# Add brew path for coreutils
+[ -d "`brew --prefix`/opt/coreutils/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/coreutils/libexec/gnubin:$PATH"
+
 if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]
 then
     export WORKON_HOME=~/.venvs
@@ -14,8 +24,6 @@ then
 fi
 
 if which jenv > /dev/null; then
-    eval "$(jenv init -)"; 
+    eval "$(jenv init -)";
     export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`";
 fi
-
-complete -C aws_completer aws

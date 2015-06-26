@@ -1,20 +1,17 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+IFS=$'\n\t'
 
-cd "$(dirname "${BASH_SOURCE}")"
-git pull origin master
-function doIt() {
-	rsync --exclude ".git/" --exclude "issues.md" --exclude "bootstrap.sh" \
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" -av --no-perms . ~
-	source ~/.bash_profile
+#git pull origin master
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+function dot_file() {
+    file=${1}
+    ln -sf ${DIR}/${file} ${HOME}/${file#dot} # Remove dot prefix from filename
 }
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	doIt
-else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
-	echo
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt
-	fi
-fi
-unset doIt
+
+for file in dot.*; do
+    dot_file ${file}
+done
