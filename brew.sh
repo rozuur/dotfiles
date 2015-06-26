@@ -16,23 +16,48 @@ brew install caskroom/cask/brew-cask
 
 brew tap homebrew/dupes
 brew tap homebrew/versions
+brew tap homebrew/completions
 brew tap caskroom/versions
-#brew tap caskroom/fonts
+brew tap caskroom/fonts
 
 brew install coreutils
 brew install findutils
-brew reinstall moreutils
+brew install moreutils
 brew install binutils
 brew install diffutils
 
 brew install python
 brew install openssl
-brew install bash bash-completion2
-echo "Add /usr/local/bin/bash to /etc/shells and chsh -s /usr/local/bin/bash"
-brew install mysql libxml2 ant git
-brew install jq ag xmlstarlet the_silver_searcher
-brew install watch tree pv
-brew install elixir leiningen rust
+brew install bash
+brew install bash-completion2
+brew install mysql
+brew install sqlite
+brew unlink postgresql
+brew install postgresql
+brew install dos2unix
+brew install libxml2
+brew install ant
+brew install git
+brew install jq
+brew install ag
+brew install astyle
+brew install csshx
+brew install fish
+brew install gradle
+brew install mercurial
+brew install subversion
+brew install redis
+brew install awscli
+brew install the_silver_searcher
+brew install xmlstarlet
+brew install watch
+brew install tree
+brew install pv
+brew install erlang
+brew install elixir
+brew install leiningen
+brew unlink rust
+brew install rust
 brew install lynx
 
 # Install `wget` with IRI support.
@@ -46,10 +71,12 @@ brew install play22
 brew install maven32
 
 # Install more recent versions of some OS X tools.
+brew unlink vim
 brew install vim --override-system-vi
 brew install grep --with-default-names
 brew install wdiff --with-gettext
 brew install openssh
+brew unlink screen
 brew install screen
 
 brew install gnu-sed --with-default-names
@@ -70,12 +97,17 @@ brew install nano
 brew install grc
 brew install commonmark
 brew install fpp
+brew unlink youtube-dl
 brew install youtube-dl
-brew install whellcheck
+brew install shellcheck
 brew install pgcli
 brew install httpie
 
-brew install homebrew/completions/fabric-completion
+brew install fabric-completion
+brew install --HEAD neovim/neovim/neovim
 
 # Cask files
 brew cask install $(cat Caskfile|grep -v "#")
+
+
+echo "Add /usr/local/bin/bash to /etc/shells and chsh -s /usr/local/bin/bash"
