@@ -3,7 +3,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-#git pull origin master
+git pull origin master
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 

@@ -10,9 +10,9 @@ if [ -d "${HOME}/bin" ] ; then
     PATH=".:${HOME}/dotfiles/bin:${PATH}"
 fi
 
-# Place user sensitive stuff here
-if [ -f "${HOME}/.sensitiverc" ] ; then
-    source "${HOME}/.sensitiverc"
+# Place user local stuff here
+if [ -f "${HOME}/.localrc" ] ; then
+    source "${HOME}/.localrc"
 fi
 
 # Set MANPATH so it includes users' private man if it exists
