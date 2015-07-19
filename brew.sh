@@ -35,7 +35,6 @@ brew install sqlite
 brew unlink postgresql
 brew install postgresql
 brew install dos2unix
-brew install libxml2
 brew install ant
 brew install git
 brew install jq
@@ -56,6 +55,7 @@ brew install pv
 brew install erlang
 brew install elixir
 brew install leiningen
+brew install npm
 brew unlink rust
 brew install rust
 brew install lynx
@@ -101,6 +101,7 @@ brew unlink youtube-dl
 brew install youtube-dl
 brew install shellcheck
 brew install pgcli
+brew install pandoc
 brew install httpie
 
 brew install fabric-completion

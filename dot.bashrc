@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 shopt -s nocaseglob # Case-insensitive globbing (used in pathname expansion)
 shopt -s cdspell # Autocorrect typos in path names when using `cd`
 

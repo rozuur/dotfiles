@@ -15,7 +15,7 @@ then
 fi
 
 if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-    . $(brew --prefix)/share/bash-completion/bash_completion
+    source $(brew --prefix)/share/bash-completion/bash_completion
 fi
 
 if [[ -d ${HOME}/source/rust ]]

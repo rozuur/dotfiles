@@ -20,9 +20,10 @@ pso = "!git push -u origin $(git branch-name)"
 l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all -20
 ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -20
 la = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
-wip = "add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
-unwip = git log -n 1 | grep -q -c wip && git reset HEAD~1
-d = diff --ignore-space-at-eol --diff-filter=MRC
+lss = log --stat  
+wip = "!git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
+unwip = "!git log -n 1 | grep -q -c wip && git reset HEAD~1"
+d = diff --ignore-space-at-eol --diff-filter=MRCA
 dc = diff --cached --ignore-space-at-eol
 dw = diff --ignore-space-at-eol --diff-filter=MRC --word-diff=color
 # diff between a revision
