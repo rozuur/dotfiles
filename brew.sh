@@ -19,6 +19,7 @@ brew tap homebrew/versions
 brew tap homebrew/completions
 brew tap caskroom/versions
 brew tap caskroom/fonts
+brew tap nviennot/tmate
 
 brew install coreutils
 brew install findutils
@@ -26,6 +27,8 @@ brew install moreutils
 brew install binutils
 brew install diffutils
 
+brew install tmate
+brew install osquery
 brew install python
 brew install openssl
 brew install bash
@@ -38,7 +41,9 @@ brew install dos2unix
 brew install ant
 brew install git
 brew install jq
+brew install jp2a
 brew install ag
+brew install wrk
 brew install astyle
 brew install csshx
 brew install fish
@@ -71,8 +76,6 @@ brew install play22
 brew install maven32
 
 # Install more recent versions of some OS X tools.
-brew unlink vim
-brew install vim --override-system-vi
 brew install grep --with-default-names
 brew install wdiff --with-gettext
 brew install openssh
@@ -97,7 +100,6 @@ brew install nano
 brew install grc
 brew install commonmark
 brew install fpp
-brew unlink youtube-dl
 brew install youtube-dl
 brew install shellcheck
 brew install pgcli
