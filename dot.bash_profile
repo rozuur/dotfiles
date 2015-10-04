@@ -6,9 +6,10 @@ if [ -f "${HOME}/.bashrc" ] ; then
 fi
 
 # Set PATH so it includes user's private bin if it exists
-if [ -d "${HOME}/bin" ] ; then
-    PATH=".:${HOME}/dotfiles/bin:${PATH}"
+if [ -d "${HOME}/dotfiles/bin" ] ; then
+    PATH="${HOME}/dotfiles/bin:${PATH}"
 fi
+PATH=".:${PATH}"
 
 # Place user local stuff here
 if [ -f "${HOME}/.localrc" ] ; then
@@ -24,4 +25,5 @@ fi
 # if [ -d "${HOME}/info" ]; then
 #   INFOPATH="${HOME}/info:${INFOPATH}"
 # fi
+
 if [ -e /Users/naveen/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/naveen/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
