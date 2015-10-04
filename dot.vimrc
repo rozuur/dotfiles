@@ -19,3 +19,7 @@ set smartcase                   " ... unless they contain at least one capital l
 set matchpairs+=<:>             " Highlight angle brackets like other bracket types
 set scrolloff=5                 " Always show 5 lines above/below the cursor
 nnoremap Q @q                   " quick recording using qq
+"" Disable automatic visual mode with mouse
+set mouse-=a
+"" Don't display status line
+set laststatus=1
