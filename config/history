@@ -19,4 +19,4 @@ export HISTCONTROL=ignoredups
 # Save each history entry immediately (protects against terminal crashes/
 # disconnections, and interleaves commands from multiple terminals in correct
 # chronological order). Also reload history
-PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
