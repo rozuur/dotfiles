@@ -23,7 +23,3 @@ then
     export RUST_SRC_PATH=${HOME}/source/rust/src
 fi
 
-if which jenv > /dev/null; then
-    eval "$(jenv init -)";
-    export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`";
-fi
