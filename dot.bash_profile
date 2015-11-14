@@ -25,5 +25,3 @@ fi
 # if [ -d "${HOME}/info" ]; then
 #   INFOPATH="${HOME}/info:${INFOPATH}"
 # fi
-
-if [ -e /Users/naveen/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/naveen/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

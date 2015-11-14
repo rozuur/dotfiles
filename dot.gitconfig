@@ -24,7 +24,8 @@ ps = push
 pso = "!git push -u origin $(git branch-name)"
 l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all -20
 ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -20
-la = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+  la = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+  last = log -1 -p --stat
 wip = "!git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
 unwip = "!git log -n 1 | grep -q -c wip && git reset HEAD~1"
 d = diff --ignore-space-at-eol --diff-filter=MRCA
@@ -122,10 +123,6 @@ fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen 
 # Find commits by commit message
 fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
-# Remove branches that have already been merged with master
-# a.k.a. ‘delete merged’
-dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-
 # List contributors with number of commits
 contributors = shortlog --summary --numbered
 
@@ -160,7 +157,7 @@ relativePaths = true
 [merge]
 tool = ediff
 [mergetool "ediff"]
-cmd = emacs --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
+cmd = emacs --no-init-file --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
 
 [color]
 ui = true
