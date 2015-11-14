@@ -42,7 +42,6 @@ brew install ant
 brew install git
 brew install jq
 brew install jp2a
-brew install ag
 brew install wrk
 brew install astyle
 brew install csshx
@@ -51,7 +50,6 @@ brew install gradle
 brew install mercurial
 brew install subversion
 brew install redis
-brew install awscli
 brew install the_silver_searcher
 brew install xmlstarlet
 brew install watch
@@ -61,7 +59,6 @@ brew install erlang
 brew install elixir
 brew install leiningen
 brew install npm
-brew unlink rust
 brew install rust
 brew install lynx
 

@@ -5,6 +5,7 @@ function parse_git_branch() {
 
 # PS1 prompt
 function prompt {
+    EXIT_STATUS="$?"
     case $TERM in
         rxvt*|xterm*)
             local TITLEBAR='\[\033]0;\u@\h:\w\007\]'
@@ -30,6 +31,23 @@ function prompt {
     local CYANBOLD="\[\033[1;36m\]"
     local WHITE="\[\033[0;37m\]"
     local WHITEBOLD="\[\033[1;37m\]"
-    export PS1="${TITLEBAR}${REDBOLD}\u: ${GREEN}\w ${CYAN}\$(parse_git_branch) \n${BLACK}→${NCOLOR} "
+
+    local HOST="\H"
+    local USER="\u"
+    local DIR="\w"
+    local DATE="\d"
+    local TIME="\t"
+
+    # First line
+    PS1="${TITLEBAR}${REDBOLD}${USER}@${HOST}: ${GREEN}${DIR} ${CYAN}\$(parse_git_branch) \n"
+    if [ ${EXIT_STATUS} -eq 0 ]; then
+        PS1="${PS1}${BLACK}→${NCOLOR} "
+    else
+        PS1="${PS1}${RED}[${EXIT_STATUS##0}] ${BLACK}→${NCOLOR} "
+    fi
+
+
+    PS2="${BOLD}>${OFF} "
 }
-prompt
+
+export PROMPT_COMMAND="$PROMPT_COMMAND prompt"
