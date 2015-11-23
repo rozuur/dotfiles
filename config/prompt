@@ -3,6 +3,18 @@ function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+function is_ssh() {
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        return 0
+        # many other tests omitted
+    else
+        case $(ps -o comm= -p $PPID) in
+            sshd|*/sshd) return 0
+        esac
+    fi
+    return 1
+}
+
 # PS1 prompt
 function prompt {
     EXIT_STATUS="$?"
@@ -38,8 +50,13 @@ function prompt {
     local DATE="\d"
     local TIME="\t"
 
+    local USERCOLOR=${REDBOLD}
+    if is_ssh; then
+        USERCOLOR=${PURPLEBOLD}
+    fi
+
     # First line
-    PS1="${TITLEBAR}${REDBOLD}${USER}@${HOST}: ${GREEN}${DIR} ${CYAN}\$(parse_git_branch) \n"
+    PS1="${TITLEBAR}${USERCOLOR}${USER}@${HOST}: ${GREEN}${DIR} ${CYAN}\$(parse_git_branch) \n"
     if [ ${EXIT_STATUS} -eq 0 ]; then
         PS1="${PS1}${BLACK}→${NCOLOR} "
     else
@@ -47,7 +64,7 @@ function prompt {
     fi
 
 
-    PS2="${BOLD}>${OFF} "
+    PS2="${BLACKBOLD}>${OFF} "
 }
 
 export PROMPT_COMMAND="$PROMPT_COMMAND prompt"

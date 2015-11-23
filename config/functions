@@ -58,23 +58,6 @@ function grab() {
   sudo chown -R ${USER} ${1:-.}
 }
 
-# Simple download utility, always non secure
-# Usage download $1 $2
-# $1 -> http location or s3 location or host@location
-# $2 -> local file location, if not provided uses "."
-function download {
-    local loc="$1"
-    local outloc="${2-.}"
-    echo $loc
-    if [[ "${loc}" =~ ^https?://* ]]; then
-        wget --no-cookies --no-check-certificate --no-clobber "${loc}" --output-document="${outloc}"
-    elif [[ "${loc}" =~ ^s3://* ]]; then
-       s3cmd --no-ssl --no-encrypt --preserve --no-mime-magic get "${loc}" "${outloc}"
-    else
-       scp -c arcfour "${loc}" "${outloc}"
-    fi
-}
-
 function scr {
   local host=${1? Where is the host}
   ssh "$host" -t screen -x -R -S "$USER"
