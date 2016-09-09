@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+# http://superuser.com/a/556031/185156
+function gifhy {
+    local input_file=${1? Input file is required}
+    local start_time=${2? Start time in seconds}
+    local duration=${3? duration in seconds}
+
+    local tempdir=$(mktemp -d)
+
+    ffmpeg -y \
+           -ss "${start_time}" -t "${duration}" -i "${input_file}" \
+           -vf fps=10,scale=320:-1:flags=lanczos,palettegen "${tempdir}"/palette.png
+
+    ffmpeg \
+        -ss "${start_time}" -t "${duration}" -i "${input_file}" \
+        -i "${tempdir}"/palette.png -filter_complex \
+        "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" "${tempdir}"/output.gif
+
+    echo "Gif file created at ${tempdir}/output.gif"
+}
+
+gifhy "$@"
