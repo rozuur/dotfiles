@@ -30,3 +30,13 @@ set skip-completed-text on
 set input-meta on
 set output-meta on
 set convert-meta off
+
+# use `cat -v` command and then press the key of your interest
+# replace ^[ with escape character \e to use it in inputrc
+# I think there is no distinction for capital chars
+
+# Bind tab to cycle completions
+# TAB: menu-complete
+# Bind Shift-Tab for backward completions
+# "\e[Z": menu-complete
+

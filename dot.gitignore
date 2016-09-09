@@ -3,3 +3,7 @@
 .\#*
 .DS_Store
 .reviewboardrc
+.coverage
+.projectile
+node_modules/
+dot.gitmessage

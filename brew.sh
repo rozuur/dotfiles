@@ -1,14 +1,15 @@
+#/bin/sh
 xcode-select --install || echo "Xcode already installed"
 
 # Check for Homebrew,
 # Install if we don't have it
 if test ! $(which brew); then
   echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Install cask
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
 
 # Update homebrew recipes
 #brew update
@@ -19,7 +20,6 @@ brew tap homebrew/versions
 brew tap homebrew/completions
 brew tap caskroom/versions
 brew tap caskroom/fonts
-brew tap nviennot/tmate
 
 brew install coreutils
 brew install findutils
@@ -85,7 +85,7 @@ brew install gnu-which --with-default-names
 brew install gnutls --with-default-names
 brew install gawk --with-default-names
 brew install curl --with-default-names
-brew install emacs --with-cocoa
+brew install emacs --with-cocoa --devel --with-imagemagick
 brew linkapps emacs
 
 brew install rsync
@@ -105,6 +105,8 @@ brew install httpie
 
 brew install fabric-completion
 brew install --HEAD neovim/neovim/neovim
+
+brew install aspell --with-lang-en
 
 # Cask files
 brew cask install $(cat Caskfile|grep -v "#")

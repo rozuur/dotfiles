@@ -29,10 +29,13 @@ ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C
 wip = "!git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
 unwip = "!git log -n 1 | grep -q -c wip && git reset HEAD~1"
 d = diff --ignore-space-at-eol --diff-filter=MRCA
+df = "!git diff --ignore-space-at-eol --color $@ | diff-so-fancy"
 dc = diff --cached --ignore-space-at-eol
-dw = diff --ignore-space-at-eol --diff-filter=MRC --word-diff=color
+dw = diff --ignore-space-at-eol --diff-filter=MRCA --minimal --word-diff=color
 # `git di $number` shows the diff between the state `$number` revisions ago and the current state
 di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+# diff so fancy
+dsf = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
 anw = !sh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
 slap = blame -w
 cp = cherry-pick
@@ -40,13 +43,13 @@ zipbranch = !sh -c 'git archive --format zip --output $1.zip $1' -
 rs = reset
 rss = reset --soft
 rsh = reset --hard
-rbm = rebase master
+rbm = rebase master --ignore-date
 rbc = rebase --continue
 mt = mergetool
 #brheads = !sh  -c 'git branch | sed "s/^\*/ /" | git log --pretty=format:"%h%x09%an%x09%ad%x09%s"' -
-news = log -p --diff-filter=M HEAD@{1}..HEAD@{0}
+news = log -p --diff-filter=MRCA HEAD@{1}..HEAD@{0}
 up = "!git remote update -p; git merge --ff-only @{u}"
-
+fixup = "!f() { TARGET=$(git rev-parse "$1"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
 #
 # Working with branches  https://gist.github.com/robmiller/6018582
 #
@@ -58,7 +61,7 @@ branch-name = "!git rev-parse --abbrev-ref HEAD"
 # the upstream branch
 publish = "!git push -u origin $(git branch-name)"
 # Delete the remote version of the current branch
-unpublish = "!git push origin :$(git branch-name)"
+unpublish = "!(git push origin :$(git branch-name) && git branch --unset-upstream)"
 # Delete a branch and recreate it from master — useful if you have, say,
 # a development branch and a master branch and they could conceivably go
 # out of sync
@@ -87,6 +90,7 @@ rebase-branch = "!git rebase -i `git merge-base master HEAD`"
 #
 
 # Unstage any files that have been added to the staging area
+stage = add
 unstage = reset HEAD
 
 # Mark a file as "assume unchanged", which means that Git will treat it
@@ -142,7 +146,7 @@ fi \
 tool = vimdiff
 
 [diff "spaceman-diff"]
-command = ~/dotfiles/bin/spaceman-diff
+#command = ~/dotfiles/bin/spaceman-diff
 
 [mergetool]
 prompt = false
@@ -162,5 +166,17 @@ cmd = emacs --no-init-file --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\
 [color]
 ui = true
 
+[commit]
+# template = ~/.gitmessage
+
 [user]
-name = Naveen Vardhi
+	name = Naveen Vardhi
+	email = vardhi.naveen@gmail.com
+[commit]
+  verbose = true
+
+
+[mergetool "meld"]
+  tool = meld
+  trustExitCode = true
+  cmd = Meld --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"

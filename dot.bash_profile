@@ -9,6 +9,15 @@ fi
 if [ -d "${HOME}/dotfiles/bin" ] ; then
     PATH="${HOME}/dotfiles/bin:${PATH}"
 fi
+
+if [ -d "/usr/local/sbin" ]; then
+    PATH="/usr/local/sbin:${PATH}"
+fi
+
+if [ -d "/usr/local/bin" ]; then
+    PATH="/usr/local/bin:${PATH}"
+fi
+
 PATH=".:${PATH}"
 
 # Place user local stuff here
