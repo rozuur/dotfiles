@@ -47,4 +47,6 @@ alias urlencode='python -c "import sys, urllib2 as ul; print ul.quote(sys.argv[1
 alias urldecode='python -c "import sys, urllib2 as ul; print ul.unquote(sys.argv[1]);"'
 alias stamp='date "+%Y-%m-%d-%H:%M:%S"'
 alias brwe=brew
-alias mvp='mvn -P shade compile package install -DskipTests=true'
+alias mvp='mvn -P compile package install -DskipTests=true -T 2C'
+
+alias ec='emacsclient -n -c'

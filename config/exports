@@ -5,8 +5,18 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 # change this to vim or emacs, if you don't want to use nano
 export EDITOR="nano"
 
+# Don't generate .pyc files
+export PYTHONDONTWRITEBYTECODE=1
+
+# For starting emacs server
+export ALTERNATE_EDITOR=""
+
 # Add brew path for coreutils
 [ -d "`brew --prefix`/opt/coreutils/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/coreutils/libexec/gnubin:$PATH"
+[ -d "`brew --prefix`/opt/findutils/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/findutils/libexec/gnubin:$PATH"
+
+# Cargo rust binaries
+[ -d "${HOME}/.cargo/bin" ] && export PATH="${HOME}/.cargo/bin:$PATH"
 
 if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]
 then
@@ -23,3 +33,5 @@ then
     export RUST_SRC_PATH=${HOME}/source/rust/src
 fi
 
+# Instead of flow control use Ctrl-s for i-search of history
+[[ $- == *i* ]] && stty -ixon
