@@ -49,7 +49,7 @@ function g() {
     if [ $# -eq 0 ]; then
         git status
     else
-        git "$@"
+        git "$@" 
     fi
 }
 
@@ -72,4 +72,9 @@ function pytrace {
 
 function youtube-audio {
    youtube-dl --download-archive downloaded.txt --extract-audio --audio-format mp3  --audio-quality 0 "$@"
+}
+
+function emcs {
+  pgrep -i emacs || emacs --daemon
+  emacsclient -c -a emacs "$@"
 }

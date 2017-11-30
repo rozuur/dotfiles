@@ -28,33 +28,28 @@ brew install binutils
 brew install diffutils
 
 brew install tmate
-brew install osquery
 brew install python
 brew install openssl
 brew install bash
 brew install bash-completion2
 brew install mysql
 brew install sqlite
-brew unlink postgresql
 brew install postgresql
 brew install dos2unix
 brew install ant
 brew install git
 brew install jq
-brew install jp2a
-brew install wrk
-brew install astyle
 brew install csshx
-brew install fish
-brew install gradle
-brew install mercurial
-brew install subversion
+brew install vim
+brew install emacs --with-cocoa
 brew install redis
 brew install the_silver_searcher
 brew install xmlstarlet
 brew install watch
 brew install tree
 brew install pv
+
+# Languages
 brew install erlang
 brew install elixir
 brew install leiningen
@@ -66,7 +61,6 @@ brew install lynx
 brew install wget --with-iri
 
 brew install s3cmd
-brew install protobuf241
 brew install lzop
 brew install libevent
 brew install play22
@@ -85,8 +79,6 @@ brew install gnu-which --with-default-names
 brew install gnutls --with-default-names
 brew install gawk --with-default-names
 brew install curl --with-default-names
-brew install emacs --with-cocoa --devel --with-imagemagick
-brew linkapps emacs
 
 brew install rsync
 brew install svn
@@ -104,9 +96,11 @@ brew install pandoc
 brew install httpie
 
 brew install fabric-completion
-brew install --HEAD neovim/neovim/neovim
 
 brew install aspell --with-lang-en
+
+# Fonts
+brew cask install font-inconsolata
 
 # Cask files
 brew cask install $(cat Caskfile|grep -v "#")

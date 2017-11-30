@@ -18,3 +18,4 @@ do
 done
 
 [ -f "`brew --prefix`/etc/grc.bashrc" ] && source "`brew --prefix`/etc/grc.bashrc"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"

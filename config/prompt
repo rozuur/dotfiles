@@ -17,7 +17,7 @@ function is_ssh() {
 
 # PS1 prompt
 function prompt {
-    EXIT_STATUS="$?"
+    local EXIT_STATUS="$?"  # This should be first statement
     case $TERM in
         rxvt*|xterm*)
             local TITLEBAR='\[\033]0;\u@\h:\w\007\]'
@@ -63,8 +63,10 @@ function prompt {
         PS1="${PS1}${RED}[${EXIT_STATUS##0}] ${BLACK}→${NCOLOR} "
     fi
 
-
     PS2="${BLACKBOLD}>${OFF} "
 }
 
-export PROMPT_COMMAND="$PROMPT_COMMAND prompt"
+# Save each history entry immediately (protects against terminal crashes/
+# disconnections, and interleaves commands from multiple terminals in correct
+# chronological order). Also reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; prompt"

@@ -14,6 +14,8 @@ export ALTERNATE_EDITOR=""
 # Add brew path for coreutils
 [ -d "`brew --prefix`/opt/coreutils/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/coreutils/libexec/gnubin:$PATH"
 [ -d "`brew --prefix`/opt/findutils/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/findutils/libexec/gnubin:$PATH"
+[ -d "`brew --prefix`/opt/gnu-sed/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/gnu-sed/libexec/gnubin:$PATH"
+[ -d "`brew --prefix`/opt/python/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/python/libexec/gnubin:$PATH"
 
 # Cargo rust binaries
 [ -d "${HOME}/.cargo/bin" ] && export PATH="${HOME}/.cargo/bin:$PATH"

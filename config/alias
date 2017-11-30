@@ -16,7 +16,6 @@ alias ll='ls -lhAF ${colorflag}'               # All files except . and ..
 
 alias less='less -r'                          # raw control characters
 alias ltail="less -Ri +F"
-alias vim='nvim -S ~/.nvimrc'
 alias whence='type -a'                        # where, of a sort
 
 alias grep='grep --color=auto'
@@ -47,6 +46,8 @@ alias urlencode='python -c "import sys, urllib2 as ul; print ul.quote(sys.argv[1
 alias urldecode='python -c "import sys, urllib2 as ul; print ul.unquote(sys.argv[1]);"'
 alias stamp='date "+%Y-%m-%d-%H:%M:%S"'
 alias brwe=brew
-alias mvp='mvn -P compile package install -DskipTests=true -T 2C'
+alias mvp="MAVEN_OPTS='-XX:+TieredCompilation -XX:TieredStopAtLevel=1' mvn -P compile package install -DskipTests=true -T 2C"
 
-alias ec='emacsclient -n -c'
+# alias ec='emacsclient -n -c'
+alias cdg='cd $(git rev-parse --show-toplevel)'
+alias alert='tput bel'

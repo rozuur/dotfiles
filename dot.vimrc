@@ -44,18 +44,20 @@ set mouse-=a
 "" Don't display status line
 set laststatus=1
 
+
+"" https://www.vi-improved.org/recommendations/
 " The Silver Searcher
 if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  " Use rg over grep
+  set grepprg=rg\ --vimgrep
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " Use rg in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 
-   set grepformat=%f:%l:%c:%m,%f:%l:%m
+   set grepformat^=%f:%l:%c:%m
 endif
 
 " Use deoplete.
