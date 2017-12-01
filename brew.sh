@@ -15,10 +15,6 @@ brew tap caskroom/cask
 #brew update
 #brew upgrade
 
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/completions
-brew tap caskroom/versions
 brew tap caskroom/fonts
 
 brew install coreutils
@@ -63,14 +59,12 @@ brew install wget --with-iri
 brew install s3cmd
 brew install lzop
 brew install libevent
-brew install play22
 brew install maven32
 
 # Install more recent versions of some OS X tools.
 brew install grep --with-default-names
 brew install wdiff --with-gettext
 brew install openssh
-brew unlink screen
 brew install screen
 
 brew install gnu-sed --with-default-names
