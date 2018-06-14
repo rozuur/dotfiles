@@ -15,8 +15,6 @@ brew tap caskroom/cask
 #brew update
 #brew upgrade
 
-brew tap caskroom/fonts
-
 brew install coreutils
 brew install findutils
 brew install moreutils

@@ -1,26 +1,11 @@
 set nocompatible                " choose no compatibility with legacy vi
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" remove extraneous whitespace when edit mode is exited
-Plugin 'thirtythreeforty/lessspace.vim'
-
-" dark powered neo-completion
-" Plugin 'Shougo/deoplete.nvim'
-
-call vundle#end()            " required
-
 syntax enable
+
 if !has('nvim')
   set encoding=utf-8  " Set default encoding to UTF-8
 endif
+
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 
@@ -59,9 +44,3 @@ if executable('ag')
 
    set grepformat^=%f:%l:%c:%m
 endif
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-" Enable removal of whitespace
-let g:lessspace_enabled = 0
-

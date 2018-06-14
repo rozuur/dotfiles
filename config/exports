@@ -16,6 +16,7 @@ export ALTERNATE_EDITOR=""
 [ -d "`brew --prefix`/opt/findutils/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/findutils/libexec/gnubin:$PATH"
 [ -d "`brew --prefix`/opt/gnu-sed/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/gnu-sed/libexec/gnubin:$PATH"
 [ -d "`brew --prefix`/opt/python/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/python/libexec/gnubin:$PATH"
+[ -d "`brew --prefix`/opt/gnu-tar/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/gnu-tar/libexec/gnubin:$PATH"
 
 # Cargo rust binaries
 [ -d "${HOME}/.cargo/bin" ] && export PATH="${HOME}/.cargo/bin:$PATH"
