@@ -45,6 +45,14 @@ function ffe() {
 }
 
 # alias for git, which displays status
+function j() {
+    if [ $# -eq 0 ]; then
+        jrnl -n10
+    else
+        jrnl "$@" 
+    fi
+}
+
 function g() {
     if [ $# -eq 0 ]; then
         git status

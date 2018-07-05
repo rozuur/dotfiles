@@ -36,3 +36,4 @@ fi
 # fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=/usr/local/opt/python@2/libexec/bin:$PATH

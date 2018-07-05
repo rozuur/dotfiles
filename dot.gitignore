@@ -7,3 +7,6 @@
 .projectile
 node_modules/
 dot.gitmessage
+play
+.idea
+.venv

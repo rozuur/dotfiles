@@ -3,7 +3,8 @@
 [core]
 editor = nano
 excludesfile = ~/.gitignore
-pager = less -F
+#pager = less -F
+  pager = /usr/local/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less -F
 
 # Make `git rebase` safer on OS X
 # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
