@@ -86,3 +86,9 @@ function emcs {
   pgrep -i emacs || emacs --daemon
   emacsclient -c -a emacs "$@"
 }
+
+function cheat {
+  # Replace spaces with slashes
+  local args="$@"
+  curl "cheat.sh/${args// //}"?style=tango
+}
