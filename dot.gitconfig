@@ -48,6 +48,7 @@ rss = reset --soft
 rsh = reset --hard
 rbm = rebase master --ignore-date
 rbc = rebase --continue
+rba = rebase --abort
 mt = mergetool
 #brheads = !sh  -c 'git branch | sed "s/^\*/ /" | git log --pretty=format:"%h%x09%an%x09%ad%x09%s"' -
 news = log -p --diff-filter=MRCA HEAD@{1}..HEAD@{0}
@@ -170,7 +171,7 @@ cmd = emacs --no-init-file --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\
 ui = true
 
 [commit]
-# template = ~/.gitmessage
+template = ~/.gitmessage
 
 [user]
 	name = Naveen Vardhi

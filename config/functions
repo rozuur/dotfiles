@@ -44,15 +44,6 @@ function ffe() {
     fi
 }
 
-# alias for git, which displays status
-function j() {
-    if [ $# -eq 0 ]; then
-        jrnl -n10
-    else
-        jrnl "$@" 
-    fi
-}
-
 function g() {
     if [ $# -eq 0 ]; then
         git status
@@ -61,10 +52,6 @@ function g() {
     fi
 }
 
-# Recursively own directory
-function grab() {
-  sudo chown -R ${USER} ${1:-.}
-}
 
 function scr {
   local host=${1? Where is the host}
@@ -91,4 +78,8 @@ function cheat {
   # Replace spaces with slashes
   local args="$@"
   curl "cheat.sh/${args// //}"?style=tango
+}
+
+function xkcd_password {
+  curl -s 'https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt' | shuf | head -5 | cut -f2 | tr '\n' ' '|sed 's/ $/\n/g'
 }

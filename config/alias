@@ -49,5 +49,6 @@ alias brwe=brew
 alias mvp="MAVEN_OPTS='-XX:+TieredCompilation -XX:TieredStopAtLevel=1' mvn -P compile package install -DskipTests=true -T 2C"
 
 # alias ec='emacsclient -n -c'
-alias cdg='cd $(git rev-parse --show-toplevel)'
+alias cdgit='cd $(git rev-parse --show-toplevel)'
 alias alert='tput bel'
+alias j='jrnl'
