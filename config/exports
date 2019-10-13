@@ -17,6 +17,7 @@ export ALTERNATE_EDITOR=""
 [ -d "`brew --prefix`/opt/gnu-sed/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/gnu-sed/libexec/gnubin:$PATH"
 [ -d "`brew --prefix`/opt/python/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/python/libexec/gnubin:$PATH"
 [ -d "`brew --prefix`/opt/gnu-tar/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/gnu-tar/libexec/gnubin:$PATH"
+[ -d "`brew --prefix`/opt/grep/libexec/gnubin" ] && export PATH="`brew --prefix`/opt/grep/libexec/gnubin:$PATH"
 
 # Cargo rust binaries
 [ -d "${HOME}/.cargo/bin" ] && export PATH="${HOME}/.cargo/bin:$PATH"
@@ -27,8 +28,14 @@ then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-    source $(brew --prefix)/share/bash-completion/bash_completion
+# Getting bash completions working https://discourse.brew.sh/t/bash-completion-2-vs-brews-auto-installed-bash-completions/2391/2
+if [[ -e "/usr/local/share/bash-completion/bash_completion" ]]; then
+	export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+	source "/usr/local/share/bash-completion/bash_completion"
+elif [[ -e "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
+	source "/usr/local/etc/profile.d/bash_completion.sh"
+elif [[ -e "/etc/bash_completion" ]]; then
+	source "/etc/bash_completion"
 fi
 
 if [[ -d ${HOME}/source/rust ]]

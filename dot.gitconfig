@@ -113,7 +113,7 @@ theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 
 # Delete any branches that have been merged into master
 # See also: https://gist.github.com/robmiller/5133264
-delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+delete-merged-branches = "!git co master && git branch --merged | fgrep -v '+ ' | fgrep -v '* ' | xargs -n 1 git branch -d"
 
 # Remove the old tag with this name and tag the latest commit with it.
 retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
