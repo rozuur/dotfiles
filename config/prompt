@@ -15,6 +15,28 @@ function is_ssh() {
     return 1
 }
 
+# Virtual ENV stuff
+function venv_info () {
+    if [ -z "$VIRTUAL_ENV_DISABLE_PROMPT" ] ; then
+        VIRT_ENV_TXT=""
+        if [ "x" != x ] ; then
+            VIRT_ENV_TXT=""
+        else
+            if [ "`basename \"$VIRTUAL_ENV\"`" = "__" ] ; then
+                # special case for Aspen magic directories
+                # see http://www.zetadev.com/software/aspen/
+                VIRT_ENV_TXT="[`basename \`dirname \"$VIRTUAL_ENV\"\``]"
+            elif [ "$VIRTUAL_ENV" != "" ]; then
+                VIRT_ENV_TXT="(`basename \"$VIRTUAL_ENV\"`)"
+            fi
+        fi
+        if [ "${VIRT_ENV_TXT}" != "" ]; then
+           echo ${VIRT_ENV_TXT}" "
+        fi
+    fi
+}
+
+
 # PS1 prompt
 function prompt {
     local EXIT_STATUS="$?"  # This should be first statement
@@ -56,7 +78,7 @@ function prompt {
     fi
 
     # First line
-    PS1="${TITLEBAR}${USERCOLOR}${USER}@${HOST}: ${GREEN}${DIR} ${CYAN}\$(parse_git_branch) \n"
+    PS1="${TITLEBAR}${USERCOLOR}${USER}@${HOST}: ${GREEN}${DIR} ${CYAN}\$(parse_git_branch) $(venv_info)\n"
     if [ ${EXIT_STATUS} -eq 0 ]; then
         PS1="${PS1}${BLACK}→${NCOLOR} "
     else
