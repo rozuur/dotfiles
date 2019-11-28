@@ -13,6 +13,7 @@ trustctime = false
 # Prevent showing files whose names contain non-ASCII symbols as unversioned.
 # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 precomposeunicode = false
+	commitGraph = true
 
 [alias]
 a = add
@@ -184,3 +185,5 @@ template = ~/.gitmessage
   tool = meld
   trustExitCode = true
   cmd = Meld --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+[gc]
+	writeCommitGraph = true
