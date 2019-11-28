@@ -52,3 +52,4 @@ alias mvp="MAVEN_OPTS='-XX:+TieredCompilation -XX:TieredStopAtLevel=1' mvn -P co
 alias cdgit='cd $(git rev-parse --show-toplevel)'
 alias alert='tput bel'
 alias j='jrnl'
+alias yd='youtube-dl -f best'

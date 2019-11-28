@@ -83,7 +83,7 @@ brew tap adoptopenjdk/openjdk
 brew tap homebrew/cask-fonts
 
 # Cask files
-brew cask install $(cat Caskfile|grep -v "#")
+brew cask install $(grep -v "#" Caskfile)
 
 
 echo "Add /usr/local/bin/bash to /etc/shells and chsh -s /usr/local/bin/bash"
