@@ -19,13 +19,13 @@ brew install openssl
 brew install bash
 brew install bash-completion2
 brew install sqlite
-brew install postgresql
 brew install dos2unix
 brew install ant
 brew install git
 brew install jq
 brew install csshx
 brew install vim
+brew install emacs --with-cocoa
 brew install redis
 brew install the_silver_searcher
 brew install xmlstarlet
@@ -38,26 +38,29 @@ brew install erlang
 brew install elixir
 brew install leiningen
 brew install npm
-brew install rust
+brew install rustup
 brew install lynx
 
-brew install wget
+# Install `wget` with IRI support.
+brew install wget --with-iri
+
 brew install s3cmd
 brew install lzop
+brew install libevent
 brew install maven32
 
 # Install more recent versions of some OS X tools.
-brew install grep
-brew install wdiff
+brew install grep --with-default-names
+brew install wdiff --with-gettext
 brew install openssh
 brew install screen
 
-brew install gnu-sed
-brew install gnu-tar
-brew install gnu-which
-brew install gnutls
-brew install gawk
-brew install curl
+brew install gnu-sed --with-default-names
+brew install gnu-tar --with-default-names
+brew install gnu-which --with-default-names
+brew install gnutls --with-default-names
+brew install gawk --with-default-names
+brew install curl --with-default-names
 
 brew install rsync
 brew install svn
@@ -76,14 +79,13 @@ brew install httpie
 
 brew install fabric-completion
 
-brew install aspell
+brew install aspell --with-lang-en
 
 # Fonts
-brew tap adoptopenjdk/openjdk
-brew tap homebrew/cask-fonts
+brew cask install font-inconsolata
 
 # Cask files
-brew cask install $(grep -v "#" Caskfile)
+brew cask install $(cat Caskfile|grep -v "#")
 
 
 echo "Add /usr/local/bin/bash to /etc/shells and chsh -s /usr/local/bin/bash"
