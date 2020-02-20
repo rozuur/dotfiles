@@ -25,7 +25,6 @@ brew install git
 brew install jq
 brew install csshx
 brew install vim
-brew install emacs --with-cocoa
 brew install redis
 brew install the_silver_searcher
 brew install xmlstarlet
@@ -41,26 +40,25 @@ brew install npm
 brew install rustup
 brew install lynx
 
-# Install `wget` with IRI support.
-brew install wget --with-iri
-
+brew install wget
 brew install s3cmd
 brew install lzop
 brew install libevent
-brew install maven32
+brew install maven
+brew install jrnl
 
 # Install more recent versions of some OS X tools.
-brew install grep --with-default-names
-brew install wdiff --with-gettext
+brew install grep
+brew install wdiff
 brew install openssh
 brew install screen
 
-brew install gnu-sed --with-default-names
-brew install gnu-tar --with-default-names
-brew install gnu-which --with-default-names
-brew install gnutls --with-default-names
-brew install gawk --with-default-names
-brew install curl --with-default-names
+brew install gnu-sed
+brew install gnu-tar 
+brew install gnu-which 
+brew install gnutls
+brew install gawk
+brew install curl
 
 brew install rsync
 brew install svn
@@ -76,13 +74,6 @@ brew install shellcheck
 brew install pgcli
 brew install pandoc
 brew install httpie
-
-brew install fabric-completion
-
-brew install aspell --with-lang-en
-
-# Fonts
-brew cask install font-inconsolata
 
 # Cask files
 brew cask install $(cat Caskfile|grep -v "#")

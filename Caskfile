@@ -14,7 +14,6 @@ ichm
 imageoptim
 intellij-idea-ce
 iterm2
-adoptopenjdk8
 macpass
 mounty
 osxfuse
@@ -26,6 +25,7 @@ qlstephen
 quicklook-json
 selfcontrol
 sequel-pro
+simplenote
 the-unarchiver
 transmission
 visual-studio-code
