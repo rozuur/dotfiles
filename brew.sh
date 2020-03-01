@@ -23,6 +23,7 @@ brew install dos2unix
 brew install ant
 brew install git
 brew install jq
+brew install gron
 brew install csshx
 brew install vim
 brew install redis
