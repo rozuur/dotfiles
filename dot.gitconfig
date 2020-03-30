@@ -147,6 +147,8 @@ git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
 fi \
 }; f"
 
+code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10"
+
 [diff]
 tool = vimdiff
 
@@ -174,9 +176,6 @@ ui = true
 [commit]
 template = ~/.gitmessage
 
-[user]
-	name = Naveen Vardhi
-	email = vardhi.naveen@gmail.com
 [commit]
   verbose = true
 

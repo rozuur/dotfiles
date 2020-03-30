@@ -1,10 +1,5 @@
 # User dependent .bash_profile file
 
-# source the users bashrc if it exists
-if [ -f "${HOME}/.bashrc" ] ; then
-    source "${HOME}/.bashrc"
-fi
-
 # Set PATH so it includes user's private bin if it exists
 if [ -d "${HOME}/dotfiles/bin" ] ; then
     PATH="${HOME}/dotfiles/bin:${PATH}"
@@ -18,6 +13,14 @@ if [ -d "/usr/local/bin" ]; then
     PATH="/usr/local/bin:${PATH}"
 fi
 
+if [ -d "/usr/local/bin" ]; then
+    PATH="/usr/local/bin:${PATH}"
+fi
+
+# source the users bashrc if it exists
+if [ -f "${HOME}/.bashrc" ] ; then
+    source "${HOME}/.bashrc"
+fi
 PATH=".:${PATH}"
 
 # Place user local stuff here
@@ -34,6 +37,3 @@ fi
 # if [ -d "${HOME}/info" ]; then
 #   INFOPATH="${HOME}/info:${INFOPATH}"
 # fi
-
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH=/usr/local/opt/python@2/libexec/bin:$PATH

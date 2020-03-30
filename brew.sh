@@ -32,6 +32,7 @@ brew install xmlstarlet
 brew install watch
 brew install tree
 brew install pv
+brew install aspell
 
 # Languages
 brew install erlang
@@ -42,7 +43,6 @@ brew install rustup
 brew install lynx
 
 brew install wget
-brew install s3cmd
 brew install lzop
 brew install libevent
 brew install maven
@@ -75,6 +75,10 @@ brew install shellcheck
 brew install pgcli
 brew install pandoc
 brew install httpie
+# Command line benchmarking
+brew install hyperfine 
+# A file watching service
+brew install watchman
 
 # Cask files
 brew cask install $(cat Caskfile|grep -v "#")

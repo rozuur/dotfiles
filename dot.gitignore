@@ -1,6 +1,8 @@
 *~
+\#*\#
 .reviewboardrc
 play
 .projectile
 .idea
 *.iml
+*.swp

@@ -83,3 +83,7 @@ function cheat {
 function xkcd_password {
   curl -s 'https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt' | shuf | head -5 | cut -f2 | tr '\n' ' '|sed 's/ $/\n/g'
 }
+
+function notify {
+  osascript -e "display notification $2 with title $1" && say "$1"
+}
