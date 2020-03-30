@@ -12,14 +12,13 @@ for option in autocd globstar; do
 done
 
 # All the settings reside inside ~/config/ folder, so source all those files.
+source ${HOME}/dotfiles/exports
 for file in ${HOME}/dotfiles/config/*
 do
     source $file
 done
 
 [ -f "`brew --prefix`/etc/grc.bashrc" ] && source "`brew --prefix`/etc/grc.bashrc"
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
-[ -f ~/.localrc ] && source ~/.localrc
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
