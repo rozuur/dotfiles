@@ -61,7 +61,7 @@ function scr {
 function pytrace {
   # or sys.path
   python -m trace \
-  --ignore-dir=$(python -c 'import sys ; print ":".join([sys.prefix, sys.exec_prefix] + sys.path)[1:]') \
+  --ignore-dir=$(python -c 'import sys ; print(":".join([sys.prefix, sys.exec_prefix] + sys.path)[1:])') \
   --trace "$@"
 }
 

@@ -6,3 +6,6 @@ play
 .idea
 *.iml
 *.swp
+node_modules
+del.sh
+.DS_Store

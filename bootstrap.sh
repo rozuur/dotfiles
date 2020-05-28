@@ -29,3 +29,4 @@ fi
 
 # Execute Os specific bootstrap
 bash ./bootstrap_${platform}.sh
+bash ./bootstrap_common.sh

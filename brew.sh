@@ -41,8 +41,10 @@ brew install leiningen
 brew install npm
 brew install rustup
 brew install lynx
+brew install java11
 
 brew install wget
+brew install tmate
 brew install lzop
 brew install libevent
 brew install maven
@@ -62,7 +64,6 @@ brew install gawk
 brew install curl
 
 brew install rsync
-brew install svn
 brew install unzip
 brew install less
 brew install nano
@@ -79,6 +80,9 @@ brew install httpie
 brew install hyperfine 
 # A file watching service
 brew install watchman
+
+# Install iredis, needs pipx
+brew install pipx
 
 # Cask files
 brew cask install $(cat Caskfile|grep -v "#")
