@@ -20,7 +20,6 @@ brew install bash
 brew install bash-completion2
 brew install sqlite
 brew install dos2unix
-brew install ant
 brew install git
 brew install jq
 brew install gron

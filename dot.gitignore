@@ -9,3 +9,4 @@ play
 node_modules
 del.sh
 .DS_Store
+appendonly.aof
