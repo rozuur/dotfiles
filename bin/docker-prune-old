@@ -1,5 +1,0 @@
-docker image     prune --force --filter 'until=2400h' --all
-docker container prune --force --filter 'until=2400h'
-docker network   prune --force --filter 'until=2400h'
-docker volume    prune --force --filter "label!=keep"
- 
