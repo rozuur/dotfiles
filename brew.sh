@@ -79,6 +79,8 @@ brew install httpie
 brew install hyperfine 
 # A file watching service
 brew install watchman
+# Prevent secrets to git repo
+brew install git-secrets
 
 # Install iredis, needs pipx
 brew install pipx
