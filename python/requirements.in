@@ -1,0 +1,7 @@
+pip-tools
+ipython
+requests
+curlify
+numpy
+pandas
+black
