@@ -21,8 +21,8 @@ brew install bash-completion2
 brew install sqlite
 brew install dos2unix
 brew install git
-brew install jq
-brew install gron
+brew install jq # Json 
+brew install gron # grep json
 brew install csshx
 brew install vim
 brew install redis
@@ -43,7 +43,7 @@ brew install lynx
 brew install java11
 
 brew install wget
-brew install tmate
+brew install tmate # Terminal sharing
 brew install lzop
 brew install libevent
 brew install maven

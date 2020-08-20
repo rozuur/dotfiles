@@ -87,3 +87,7 @@ function xkcd_password {
 function notify {
   osascript -e "display notification $2 with title $1" && say "$1"
 }
+
+function docker-bash {
+  docker exec -i -t "$1" /bin/bash
+}

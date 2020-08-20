@@ -1,10 +1,5 @@
 # User dependent .bash_profile file
 
-# Set PATH so it includes user's private bin if it exists
-if [ -d "${HOME}/dotfiles/bin" ] ; then
-    PATH="${HOME}/dotfiles/bin:${PATH}"
-fi
-
 if [ -d "/usr/local/sbin" ]; then
     PATH="/usr/local/sbin:${PATH}"
 fi
@@ -13,15 +8,20 @@ if [ -d "/usr/local/bin" ]; then
     PATH="/usr/local/bin:${PATH}"
 fi
 
-if [ -d "/usr/local/bin" ]; then
-    PATH="/usr/local/bin:${PATH}"
+if [ -d "$HOME/.cargo/bin" ]; then
+    PATH="$HOME/.cargo/bin:${PATH}"
 fi
+
+if [ -d "${HOME}/dotfiles/bin" ] ; then
+    PATH="${HOME}/dotfiles/bin:${PATH}"
+fi
+
+PATH=".:${PATH}"
 
 # source the users bashrc if it exists
 if [ -f "${HOME}/.bashrc" ] ; then
     source "${HOME}/.bashrc"
 fi
-PATH=".:${PATH}"
 
 # Place user local stuff here
 if [ -f "${HOME}/.localrc" ] ; then
