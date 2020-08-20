@@ -185,4 +185,11 @@ template = ~/.gitmessage
   trustExitCode = true
   cmd = Meld --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 [gc]
-	writeCommitGraph = true
+  writeCommitGraph = true
+
+[user]
+	useConfigOnly = true
+[includeIf "gitdir:~/source/"]
+  path = .gitconfig-source
+[includeIf "gitdir:~/workspace/"]
+  path = .gitconfig-work
