@@ -3,5 +3,6 @@ ipython
 requests
 curlify
 numpy
+scipy
 pandas
 black

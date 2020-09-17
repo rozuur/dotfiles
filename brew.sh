@@ -67,7 +67,6 @@ brew install unzip
 brew install less
 brew install nano
 
-brew install grc
 brew install commonmark
 brew install fpp
 brew install youtube-dl

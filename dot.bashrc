@@ -18,7 +18,3 @@ do
     source $file
 done
 
-[ -f "`brew --prefix`/etc/grc.bashrc" ] && source "`brew --prefix`/etc/grc.bashrc"
-
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8

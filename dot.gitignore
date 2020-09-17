@@ -7,6 +7,6 @@ play
 *.iml
 *.swp
 node_modules
-del.sh
+del.*
 .DS_Store
 appendonly.aof

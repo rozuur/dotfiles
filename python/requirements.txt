@@ -18,7 +18,7 @@ idna==2.10                # via requests
 ipython-genutils==0.2.0   # via traitlets
 ipython==7.17.0           # via -r requirements.in
 jedi==0.17.2              # via ipython
-numpy==1.19.1             # via -r requirements.in, pandas
+numpy==1.19.1             # via -r requirements.in, pandas, scipy
 pandas==1.1.0             # via -r requirements.in
 parso==0.7.1              # via jedi
 pathspec==0.8.0           # via black
@@ -32,6 +32,7 @@ python-dateutil==2.8.1    # via pandas
 pytz==2020.1              # via pandas
 regex==2020.7.14          # via black
 requests==2.24.0          # via -r requirements.in, curlify
+scipy==1.5.2              # via -r requirements.in
 six==1.15.0               # via pip-tools, python-dateutil, traitlets
 toml==0.10.1              # via black
 traitlets==4.3.3          # via ipython
