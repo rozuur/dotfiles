@@ -166,8 +166,10 @@ relativePaths = true
 
 [merge]
 tool = ediff
-[mergetool "ediff"]
-cmd = emacs --no-init-file --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
+
+[mergetool.ediff]
+cmd = emacs --no-site-file --no-splash --eval \"(add-to-list 'default-frame-alist '(fullscreen . maximized))\" --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
+
 
 [color]
 ui = true
