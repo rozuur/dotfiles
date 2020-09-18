@@ -8,11 +8,11 @@ if [ -d "/usr/local/bin" ]; then
     PATH="/usr/local/bin:${PATH}"
 fi
 
-export PATH=".:${PATH}"
-
 # source the users bashrc if it exists
 if [ -f "${HOME}/.bashrc" ] ; then
     source "${HOME}/.bashrc"
 fi
+
+export PATH=".:${PATH}"
 
 # Don't add anything to this profile file
