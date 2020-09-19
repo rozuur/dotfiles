@@ -38,12 +38,12 @@ then
 fi
 
 # Getting bash completions working https://discourse.brew.sh/t/bash-completion-2-vs-brews-auto-installed-bash-completions/2391/2
-if [[ -e "/usr/local/share/bash-completion/bash_completion" ]]; then
+if [[ $PS1 && -e "/usr/local/share/bash-completion/bash_completion" ]]; then
 	export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 	source "/usr/local/share/bash-completion/bash_completion"
-elif [[ -e "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
+elif [[ $PS1 && -e "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
 	source "/usr/local/etc/profile.d/bash_completion.sh"
-elif [[ -e "/etc/bash_completion" ]]; then
+elif [[ $PS1 && -e "/etc/bash_completion" ]]; then
 	source "/etc/bash_completion"
 fi
 
