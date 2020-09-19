@@ -6,3 +6,5 @@ numpy
 scipy
 pandas
 black
+pylint
+autopep8
