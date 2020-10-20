@@ -80,6 +80,8 @@ brew install hyperfine
 brew install watchman
 # Prevent secrets to git repo
 brew install git-secrets
+# Install better git diff
+brew install git-delta
 
 # Install iredis, needs pipx
 brew install pipx
