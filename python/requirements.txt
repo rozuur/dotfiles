@@ -11,36 +11,41 @@ attrs==19.3.0             # via black
 autopep8==1.5.4           # via -r requirements.in
 backcall==0.2.0           # via ipython
 black==19.10b0            # via -r requirements.in
-certifi==2020.6.20        # via requests
+certifi==2020.6.20        # via matplotlib, requests
 chardet==3.0.4            # via requests
 click==7.1.2              # via black, pip-tools
 curlify==2.2.1            # via -r requirements.in
+cycler==0.10.0            # via matplotlib
 decorator==4.4.2          # via ipython, traitlets
 idna==2.10                # via requests
 ipython-genutils==0.2.0   # via traitlets
 ipython==7.17.0           # via -r requirements.in
 isort==5.5.2              # via pylint
 jedi==0.17.2              # via ipython
+kiwisolver==1.2.0         # via matplotlib
 lazy-object-proxy==1.4.3  # via astroid
+matplotlib==3.3.2         # via -r requirements.in
 mccabe==0.6.1             # via pylint
-numpy==1.19.1             # via -r requirements.in, pandas, scipy
+numpy==1.19.1             # via -r requirements.in, matplotlib, pandas, scipy
 pandas==1.1.0             # via -r requirements.in
 parso==0.7.1              # via jedi
 pathspec==0.8.0           # via black
 pexpect==4.8.0            # via ipython
 pickleshare==0.7.5        # via ipython
+pillow==7.2.0             # via matplotlib
 pip-tools==5.3.1          # via -r requirements.in
 prompt-toolkit==3.0.6     # via ipython
 ptyprocess==0.6.0         # via pexpect
 pycodestyle==2.6.0        # via autopep8
 pygments==2.6.1           # via ipython
 pylint==2.6.0             # via -r requirements.in
-python-dateutil==2.8.1    # via pandas
+pyparsing==2.4.7          # via matplotlib
+python-dateutil==2.8.1    # via matplotlib, pandas
 pytz==2020.1              # via pandas
 regex==2020.7.14          # via black
 requests==2.24.0          # via -r requirements.in, curlify
 scipy==1.5.2              # via -r requirements.in
-six==1.15.0               # via astroid, pip-tools, python-dateutil, traitlets
+six==1.15.0               # via astroid, cycler, pip-tools, python-dateutil, traitlets
 toml==0.10.1              # via autopep8, black, pylint
 traitlets==4.3.3          # via ipython
 typed-ast==1.4.1          # via black

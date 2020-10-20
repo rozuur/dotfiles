@@ -5,6 +5,7 @@ curlify
 numpy
 scipy
 pandas
+matplotlib
 black
 pylint
 autopep8
