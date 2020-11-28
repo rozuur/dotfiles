@@ -42,8 +42,8 @@ alias week='date +%V'                          # Get week number
 alias ipaddr="curl http://icanhazip.com/"      # ip address
 
 # URL-encode and decode strings
-alias urlencode='python -c "import sys, urllib2 as ul; print ul.quote(sys.argv[1]);"'
-alias urldecode='python -c "import sys, urllib2 as ul; print ul.unquote(sys.argv[1]);"'
+alias urlencode='python2 -c "import sys, urllib2 as ul; print ul.quote(sys.argv[1]);"'
+alias urldecode='python2 -c "import sys, urllib2 as ul; print ul.unquote(sys.argv[1]);"'
 alias stamp='date "+%Y-%m-%d-%H:%M:%S"'
 alias brwe=brew
 alias mvp="MAVEN_OPTS='-XX:+TieredCompilation -XX:TieredStopAtLevel=1' mvn clean package -DskipTests=true -T 2C"

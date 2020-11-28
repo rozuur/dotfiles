@@ -1222,3 +1222,4 @@ python Dashboard.start()
 # Local Variables:
 # mode: python
 # End:
+set startup-with-shell off

@@ -11,12 +11,16 @@ attrs==19.3.0             # via black
 autopep8==1.5.4           # via -r requirements.in
 backcall==0.2.0           # via ipython
 black==19.10b0            # via -r requirements.in
+blessings==1.7            # via curtsies
+bpython==0.20.1           # via -r requirements.in
 certifi==2020.6.20        # via matplotlib, requests
 chardet==3.0.4            # via requests
 click==7.1.2              # via black, pip-tools
 curlify==2.2.1            # via -r requirements.in
+curtsies==0.3.4           # via bpython
 cycler==0.10.0            # via matplotlib
 decorator==4.4.2          # via ipython, traitlets
+greenlet==0.4.17          # via bpython
 idna==2.10                # via requests
 ipython-genutils==0.2.0   # via traitlets
 ipython==7.17.0           # via -r requirements.in
@@ -37,20 +41,20 @@ pip-tools==5.3.1          # via -r requirements.in
 prompt-toolkit==3.0.6     # via ipython
 ptyprocess==0.6.0         # via pexpect
 pycodestyle==2.6.0        # via autopep8
-pygments==2.6.1           # via ipython
+pygments==2.6.1           # via bpython, ipython
 pylint==2.6.0             # via -r requirements.in
 pyparsing==2.4.7          # via matplotlib
 python-dateutil==2.8.1    # via matplotlib, pandas
 pytz==2020.1              # via pandas
 regex==2020.7.14          # via black
-requests==2.24.0          # via -r requirements.in, curlify
+requests==2.24.0          # via -r requirements.in, bpython, curlify
 scipy==1.5.2              # via -r requirements.in
-six==1.15.0               # via astroid, cycler, pip-tools, python-dateutil, traitlets
+six==1.15.0               # via astroid, bpython, cycler, pip-tools, python-dateutil, traitlets
 toml==0.10.1              # via autopep8, black, pylint
 traitlets==4.3.3          # via ipython
 typed-ast==1.4.1          # via black
 urllib3==1.25.10          # via requests
-wcwidth==0.2.5            # via prompt-toolkit
+wcwidth==0.2.5            # via bpython, curtsies, prompt-toolkit
 wrapt==1.12.1             # via astroid
 
 # The following packages are considered to be unsafe in a requirements file:
