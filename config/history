@@ -10,10 +10,10 @@ export HISTSIZE=100000
 unset HISTFILESIZE
 # Add a timestamp to each history entry.
 export HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S  "
-# Don't remember trivial 1- and 2-letter commands.
+# Don't remember trivial 1- letter commands.
 # & suppress duplicate items
 # [ \t]* supress any command starting with a space
-export HISTIGNORE="?:??:&:[ ]*"
+export HISTIGNORE="?:&:[ ]*"
 # What it says.
 export HISTCONTROL=ignoredups
 # Change the location of bash history file
