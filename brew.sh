@@ -83,9 +83,6 @@ brew install git-secrets
 # Install better git diff
 brew install git-delta
 
-# Install iredis, needs pipx
-brew install pipx
-
 # Cask files
 brew cask install $(cat Caskfile|grep -v "#")
 
