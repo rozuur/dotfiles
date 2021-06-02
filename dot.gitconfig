@@ -41,7 +41,7 @@ unwip = "!git log -n 1 | grep -q -c wip && git reset HEAD~1"
 d = diff --ignore-space-at-eol --diff-filter=MRCA
 df = "!git diff --ignore-space-at-eol --color $@ | diff-so-fancy"
 dc = diff --cached --ignore-space-at-eol
-dw = diff --ignore-space-at-eol --diff-filter=MRCA --minimal --word-diff=color
+dw = diff --ignore-space-at-eol --diff-filter=MRCA --minimal --word-diff
 # `git di $number` shows the diff between the state `$number` revisions ago and the current state
 di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 # diff so fancy

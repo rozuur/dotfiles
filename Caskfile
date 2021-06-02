@@ -20,7 +20,7 @@ mpv
 # Public urls for testing
 ngrok
 obsidian
-openoffice
+onlyoffice
 osxfuse
 plex-media-server
 postgres
@@ -39,7 +39,6 @@ sequential
 signal
 the-unarchiver
 transmission
-virtualbox
 visual-studio-code
 visualvm
 vlc

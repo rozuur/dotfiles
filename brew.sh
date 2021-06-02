@@ -14,7 +14,6 @@ brew install moreutils
 brew install binutils
 brew install diffutils
 
-brew install python
 brew install openssl
 brew install bash
 brew install bash-completion2
@@ -84,7 +83,7 @@ brew install git-secrets
 brew install git-delta
 
 # Cask files
-brew cask install $(cat Caskfile|grep -v "#")
+brew install --cask $(cat Caskfile|grep -v "#")
 
 
 echo "Add /usr/local/bin/bash to /etc/shells and chsh -s /usr/local/bin/bash"

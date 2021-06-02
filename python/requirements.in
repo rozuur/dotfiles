@@ -1,8 +1,9 @@
 pip-tools
 ipython
-bpython
 requests
 curlify
+requests_cache
+dacite
 numpy
 scipy
 pandas
@@ -10,3 +11,10 @@ matplotlib
 black
 pylint
 autopep8
+
+mycli
+# pgcli
+iredis
+httpie
+
+aws-google-auth

@@ -14,6 +14,9 @@ export PYTHONDONTWRITEBYTECODE=1
 # For starting emacs server
 export ALTERNATE_EDITOR=""
 
+# Disable brew auto updates
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 BREW_PREFIX=`brew --prefix`
 if [[ -d "${BREW_PREFIX}" ]]; then
     # Add brew path for coreutils

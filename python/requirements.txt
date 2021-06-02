@@ -4,58 +4,243 @@
 #
 #    pip-compile requirements.in
 #
-appdirs==1.4.4            # via black
-appnope==0.1.0            # via ipython
-astroid==2.4.2            # via pylint
-attrs==19.3.0             # via black
-autopep8==1.5.4           # via -r requirements.in
-backcall==0.2.0           # via ipython
-black==19.10b0            # via -r requirements.in
-blessings==1.7            # via curtsies
-bpython==0.20.1           # via -r requirements.in
-certifi==2020.6.20        # via matplotlib, requests
-chardet==3.0.4            # via requests
-click==7.1.2              # via black, pip-tools
-curlify==2.2.1            # via -r requirements.in
-curtsies==0.3.4           # via bpython
-cycler==0.10.0            # via matplotlib
-decorator==4.4.2          # via ipython, traitlets
-greenlet==0.4.17          # via bpython
-idna==2.10                # via requests
-ipython-genutils==0.2.0   # via traitlets
-ipython==7.17.0           # via -r requirements.in
-isort==5.5.2              # via pylint
-jedi==0.17.2              # via ipython
-kiwisolver==1.2.0         # via matplotlib
-lazy-object-proxy==1.4.3  # via astroid
-matplotlib==3.3.2         # via -r requirements.in
-mccabe==0.6.1             # via pylint
-numpy==1.19.1             # via -r requirements.in, matplotlib, pandas, scipy
-pandas==1.1.0             # via -r requirements.in
-parso==0.7.1              # via jedi
-pathspec==0.8.0           # via black
-pexpect==4.8.0            # via ipython
-pickleshare==0.7.5        # via ipython
-pillow==7.2.0             # via matplotlib
-pip-tools==5.3.1          # via -r requirements.in
-prompt-toolkit==3.0.6     # via ipython
-ptyprocess==0.6.0         # via pexpect
-pycodestyle==2.6.0        # via autopep8
-pygments==2.6.1           # via bpython, ipython
-pylint==2.6.0             # via -r requirements.in
-pyparsing==2.4.7          # via matplotlib
-python-dateutil==2.8.1    # via matplotlib, pandas
-pytz==2020.1              # via pandas
-regex==2020.7.14          # via black
-requests==2.24.0          # via -r requirements.in, bpython, curlify
-scipy==1.5.2              # via -r requirements.in
-six==1.15.0               # via astroid, bpython, cycler, pip-tools, python-dateutil, traitlets
-toml==0.10.1              # via autopep8, black, pylint
-traitlets==4.3.3          # via ipython
-typed-ast==1.4.1          # via black
-urllib3==1.25.10          # via requests
-wcwidth==0.2.5            # via bpython, curtsies, prompt-toolkit
-wrapt==1.12.1             # via astroid
+appdirs==1.4.4
+    # via black
+appnope==0.1.2
+    # via ipython
+astroid==2.5.6
+    # via pylint
+autopep8==1.5.7
+    # via -r requirements.in
+aws-google-auth==0.0.37
+    # via -r requirements.in
+backcall==0.2.0
+    # via ipython
+beautifulsoup4==4.9.3
+    # via aws-google-auth
+black==21.5b2
+    # via -r requirements.in
+boto3==1.17.97
+    # via aws-google-auth
+botocore==1.20.97
+    # via
+    #   boto3
+    #   s3transfer
+certifi==2021.5.30
+    # via requests
+cffi==1.14.5
+    # via cryptography
+chardet==4.0.0
+    # via requests
+cli-helpers[styles]==2.1.0
+    # via mycli
+click==7.1.2
+    # via
+    #   black
+    #   iredis
+    #   mycli
+    #   pip-tools
+configobj==5.0.6
+    # via
+    #   cli-helpers
+    #   iredis
+    #   mycli
+configparser==5.0.2
+    # via aws-google-auth
+cryptography==3.4.7
+    # via mycli
+curlify==2.2.1
+    # via -r requirements.in
+cycler==0.10.0
+    # via matplotlib
+dacite==1.6.0
+    # via -r requirements.in
+decorator==5.0.9
+    # via ipython
+filelock==3.0.12
+    # via aws-google-auth
+httpie==2.4.0
+    # via -r requirements.in
+idna==2.10
+    # via requests
+importlib-metadata==4.5.0
+    # via keyring
+importlib-resources==5.1.4
+    # via
+    #   iredis
+    #   mycli
+ipython-genutils==0.2.0
+    # via traitlets
+ipython==7.24.1
+    # via -r requirements.in
+iredis==1.9.2
+    # via -r requirements.in
+isort==5.8.0
+    # via pylint
+itsdangerous==2.0.1
+    # via requests-cache
+jedi==0.18.0
+    # via ipython
+jmespath==0.10.0
+    # via
+    #   boto3
+    #   botocore
+keyring==23.0.1
+    # via aws-google-auth
+keyrings.alt==4.0.2
+    # via aws-google-auth
+kiwisolver==1.3.1
+    # via matplotlib
+lazy-object-proxy==1.6.0
+    # via astroid
+lxml==4.6.3
+    # via aws-google-auth
+matplotlib-inline==0.1.2
+    # via ipython
+matplotlib==3.4.2
+    # via -r requirements.in
+mccabe==0.6.1
+    # via pylint
+mistune==0.8.4
+    # via iredis
+mycli==1.24.1
+    # via -r requirements.in
+mypy-extensions==0.4.3
+    # via black
+numpy==1.20.3
+    # via
+    #   -r requirements.in
+    #   matplotlib
+    #   pandas
+    #   scipy
+pandas==1.2.4
+    # via -r requirements.in
+parso==0.8.2
+    # via jedi
+pathspec==0.8.1
+    # via black
+pendulum==2.1.2
+    # via iredis
+pep517==0.10.0
+    # via pip-tools
+pexpect==4.8.0
+    # via ipython
+pickleshare==0.7.5
+    # via ipython
+pillow==8.2.0
+    # via
+    #   aws-google-auth
+    #   matplotlib
+pip-tools==6.1.0
+    # via -r requirements.in
+prompt-toolkit==3.0.18
+    # via
+    #   ipython
+    #   iredis
+    #   mycli
+ptyprocess==0.7.0
+    # via pexpect
+pyaes==1.6.1
+    # via mycli
+pycodestyle==2.7.0
+    # via autopep8
+pycparser==2.20
+    # via cffi
+pygments==2.9.0
+    # via
+    #   cli-helpers
+    #   httpie
+    #   ipython
+    #   iredis
+    #   mycli
+pylint==2.8.3
+    # via -r requirements.in
+pymysql==1.0.2
+    # via mycli
+pyparsing==2.4.7
+    # via matplotlib
+pyperclip==1.8.2
+    # via mycli
+pysocks==1.7.1
+    # via requests
+python-dateutil==2.8.1
+    # via
+    #   botocore
+    #   matplotlib
+    #   pandas
+    #   pendulum
+pytz==2021.1
+    # via
+    #   pandas
+    #   tzlocal
+pytzdata==2020.1
+    # via pendulum
+redis==3.5.3
+    # via iredis
+regex==2021.4.4
+    # via black
+requests-cache==0.6.3
+    # via -r requirements.in
+requests-toolbelt==0.9.1
+    # via httpie
+requests[socks]==2.25.1
+    # via
+    #   -r requirements.in
+    #   aws-google-auth
+    #   curlify
+    #   httpie
+    #   requests-cache
+    #   requests-toolbelt
+s3transfer==0.4.2
+    # via boto3
+scipy==1.6.3
+    # via -r requirements.in
+six==1.16.0
+    # via
+    #   aws-google-auth
+    #   configobj
+    #   cycler
+    #   python-dateutil
+    #   url-normalize
+soupsieve==2.2.1
+    # via beautifulsoup4
+sqlparse==0.3.1
+    # via mycli
+tabulate[widechars]==0.8.9
+    # via
+    #   aws-google-auth
+    #   cli-helpers
+terminaltables==3.1.0
+    # via cli-helpers
+toml==0.10.2
+    # via
+    #   autopep8
+    #   black
+    #   pep517
+    #   pylint
+traitlets==5.0.5
+    # via
+    #   ipython
+    #   matplotlib-inline
+tzlocal==2.1
+    # via aws-google-auth
+url-normalize==1.4.3
+    # via requests-cache
+urllib3==1.26.5
+    # via
+    #   botocore
+    #   requests
+wcwidth==0.1.9
+    # via
+    #   iredis
+    #   prompt-toolkit
+    #   tabulate
+wrapt==1.12.1
+    # via astroid
+zipp==3.4.1
+    # via
+    #   importlib-metadata
+    #   importlib-resources
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
