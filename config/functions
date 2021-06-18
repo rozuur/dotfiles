@@ -14,35 +14,6 @@ function clear()
     fi
 }
 
-function ff() {
-    if [ $# -eq 0 ]; then
-        find . -type f
-    elif [ $# -eq 1 ]; then
-        find . -type f -iname "*$1*";
-    else
-        find "$2" -type f -iname "*$1*";
-    fi
-}
-
-function ffd() {
-    if [ $# -eq 0 ]; then
-        find . -type d
-    elif [ $# -eq 1 ]; then
-        find . -type d -iname "*$1*";
-    else
-        find "$2" -type d -iname "*$1*";
-    fi
-}
-
-function ffe() {
-    if [ $# -eq 0 ]; then
-        find . -type f
-    elif [ $# -eq 1 ]; then
-        find . -type f -iname "*$1";
-    else
-        find "$2" -type f -iname "*$1";
-    fi
-}
 
 function g() {
     if [ $# -eq 0 ]; then

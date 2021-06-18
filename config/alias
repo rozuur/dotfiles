@@ -51,5 +51,7 @@ alias mvp="MAVEN_OPTS='-XX:+TieredCompilation -XX:TieredStopAtLevel=1' mvn clean
 # alias ec='emacsclient -n -c'
 alias cdgit='cd $(git rev-parse --show-toplevel)'
 alias alert='tput bel'
-alias j='jrnl'
 alias yd='youtube-dl -f best'
+
+alias r=rg
+alias f=fd

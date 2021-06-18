@@ -25,7 +25,8 @@ brew install gron # grep json
 brew install csshx
 brew install vim
 brew install redis
-brew install the_silver_searcher
+brew install ripgrep
+brew install fd
 brew install xmlstarlet
 brew install watch
 brew install tree
