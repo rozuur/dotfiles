@@ -10,9 +10,9 @@ fi
 alias df='df -h'
 alias du='du -h'
 
-alias ls='ls -hF ${colorflag}'                 # classify files in colour
-alias la='ls -hAF ${colorflag}'                # All files except . and ..
-alias ll='ls -lhAF ${colorflag}'               # All files except . and ..
+alias ls='ls -GhvX --group-directories-first ${colorflag}'     # classify files in colour
+alias la='ls -AGhvX --group-directories-first ${colorflag}'    # All files except . and ..
+alias ll='ls -lAGh1vX --group-directories-first ${colorflag}'  # All files except . and .. in long listing
 
 alias less='less -r'                          # raw control characters
 alias ltail="less -Ri +F"
