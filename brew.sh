@@ -82,6 +82,9 @@ brew install watchman
 brew install git-secrets
 # Install better git diff
 brew install git-delta
+# Instead of cd use zoxide for changing folders
+brew install zoxide
+brew install fzf
 
 # Cask files
 brew install --cask $(cat Caskfile|grep -v "#")
