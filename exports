@@ -64,3 +64,7 @@ fi
 
 # Instead of flow control use Ctrl-s for i-search of history
 [[ $- == *i* ]] && stty -ixon
+
+# fzf
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --preview='echo {}' --preview-window=down:wrap --no-hscroll --border"
